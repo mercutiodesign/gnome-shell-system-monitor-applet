@@ -51,10 +51,6 @@ endif
 # macros
 # -------
 
-# usage: $(call reload-extension $(UUID))
-
-reload-extension = $(shell gnome-shell-extension-tool -r $(1))
-
 # usage: $(call msg,INFO,'lorem ipsum')
 msg = @printf '  [%-12s] %s\n' '$(1)' '$(2)'
 
@@ -69,7 +65,7 @@ msg = @printf '  [%-12s] %s\n' '$(1)' '$(2)'
 
 PHONY += help
 help:
-	@echo  'Install or remove (and reload) of the extension, for the local user'
+	@echo  'Install or remove of the extension, for the local user'
 	@echo  'or as admin for all users:'
 	@echo  ''
 	@echo  '  make [install|remove]                        # for the local user'
@@ -83,7 +79,6 @@ help:
 	@echo  'Other targets are:'
 	@echo  ''
 	@echo  '  zip-file  - build and zip ./$(UUID).zip'
-	@echo  '  reload    - reload extension $(UUID)'
 	@echo  '  clean     - remove most generated files'
 	@echo  '  extension - rebuild schemas/gschemas.compiled'
 	@echo  '  translate - generate translation from po/ files'
@@ -101,7 +96,6 @@ install: remove build
 	$(Q) $(SUDO) mkdir -p $(INSTALLBASE)/$(INSTALLNAME)
 	$(Q) $(SUDO) cp $(VV) -r ./_build/* $(INSTALLBASE)/$(INSTALLNAME)/
 ifeq ($(strip $(BUILD_FOR_RPM)),)
-	$(Q) $(MAKE) -s reload
 endif
 	$(call msg,$@,OK)
 
@@ -109,12 +103,7 @@ remove:
 	$(call msg,$@,$(SUDO) $(INSTALLBASE)/$(INSTALLNAME))
 	$(Q) $(SUDO) rm $(VV) -fr $(INSTALLBASE)/$(INSTALLNAME)
 ifeq ($(strip $(BUILD_FOR_RPM)),)
-	$(Q) $(MAKE) -s reload
 endif
-	$(call msg,$@,OK)
-
-reload:
-	$(call reload-extension,$(UUID))
 	$(call msg,$@,OK)
 
 
