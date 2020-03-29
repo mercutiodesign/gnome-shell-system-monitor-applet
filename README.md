@@ -20,7 +20,7 @@ Before installing this extension, ensure you have the necessary system packages 
 * On Ubuntu:
 
       $ sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0
-      
+
 * On Debian:
 
       $ sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0
@@ -28,7 +28,7 @@ Before installing this extension, ensure you have the necessary system packages 
 * On Fedora:
 
       $ sudo yum install --assumeyes libgtop2-devel NetworkManager-glib-devel
-    
+
 * On openSUSE (Leap 42.1):
 
       $ sudo zypper install gnome-shell-devel libgtop-devel libgtop-2_0-10
@@ -61,7 +61,7 @@ Additionally, rebooting gnome-shell may help (type `Alt + F2` and input `r` in t
 
     $ sudo dnf install gnome-shell-extension-system-monitor-applet
 
-* Enable it with `gnome-tweak-tool` or `gnome-shell-extension-tool --enable-extension=system-monitor@paradoxxx.zero.gmail.com`
+* Enable it with `gnome-tweak-tool` or `gnome-shell-extension-tool --enable-extension=system-monitor@mercutio-design.de`
 
 #### Manual installation
 
@@ -96,7 +96,7 @@ On openSUSE you need to install a devel package that provides the `gnome-shell-e
 If we do not have the translation of your language and you want to translate by yourself, please make a fork, add your po/YOUR_LANG/system-monitor-applet.po file, and make a pull request.
 
 #### Deployment
-    
+
 1. To create a zip file with the specified version number, ready to upload to [Gnome Shell Extensions](https://extensions.gnome.org/) or similar repository, run:
 
     make zip-file VERSION=<version>

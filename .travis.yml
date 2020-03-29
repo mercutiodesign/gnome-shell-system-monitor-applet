@@ -56,7 +56,7 @@ script:
 
 # Install and enable extension.
 -   sudo make install
--   gnome-shell-extension-tool --enable-extension=system-monitor@paradoxxx.zero.gmail.com
+-   gnome-shell-extension-tool --enable-extension=system-monitor@mercutio-design.de
 
 # Give extension time to run.
 -   sleep 10
