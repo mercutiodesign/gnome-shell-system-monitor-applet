@@ -1,8 +1,8 @@
 {
     "shell-version": ["3.26", "3.28", "3.30", "3.32", "3.34"],
-    "uuid": "system-monitor@paradoxxx.zero.gmail.com",
-    "name": "system-monitor",
-    "url": "https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet",
+    "uuid": "system-monitor@mercutio-design.de",
+    "name": "system-monitor-martin",
+    "url": "https://github.com/mercutiodesign/gnome-shell-system-monitor-applet",
     "description": "Display system informations in gnome shell status bar, such as memory usage, cpu usage, network rates…",
     "settings-schema":  "org.gnome.shell.extensions.system-monitor",
     "gettext-domain": "system-monitor",
